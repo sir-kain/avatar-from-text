@@ -1,5 +1,3 @@
-import "./style.css";
-
 const names = [
   "Ahmadou Waly Ndiaye",
   "Adji Fatma Mbacke Thioune",
