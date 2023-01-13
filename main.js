@@ -1,5 +1,4 @@
 import "./style.css";
-import randomColor from "randomcolor";
 
 const names = [
   "Ahmadou Waly Ndiaye",
@@ -36,7 +35,8 @@ function maxInitialNumber(initials, n) {
 function item(initials) {
   const $item = createNode("div");
   $item.classList.add("item");
-  $item.style.background = randomColor();
+  $item.style.background =
+    "#" + Math.floor(Math.random() * 16777215).toString(16);
   initials.forEach((initial) => {
     const $span = createNode("span");
     $span.textContent = initial;
