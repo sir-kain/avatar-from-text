@@ -1,23 +1,58 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import { setupCounter } from './counter.js'
+import "./style.css";
+import randomColor from "randomcolor";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const names = [
+  "Ahmadou Waly Ndiaye",
+  "Adji Fatma Mbacke Thioune",
+  "23 a33",
+  "Moustapha Gueye",
+  "Ndeye Binta",
+  " ko",
+  "Inno",
+];
 
-setupCounter(document.querySelector('#counter'))
+function $(selector) {
+  return document.querySelector(selector);
+}
+
+function createNode(element) {
+  return document.createElement(element);
+}
+
+function append(parent, el) {
+  parent.insertAdjacentElement("beforeend", el);
+}
+
+function nameInitals(names) {
+  return names.map((fullname) => {
+    return fullname.split(" ").map((name) => name.charAt(0));
+  });
+}
+
+function maxInitialNumber(initials, n) {
+  return initials.map((inital) => inital.slice(0, n));
+}
+
+function item(initials) {
+  const $item = createNode("div");
+  $item.classList.add("item");
+  $item.style.background = randomColor();
+  initials.forEach((initial) => {
+    const $span = createNode("span");
+    $span.textContent = initial;
+    append($item, $span);
+  });
+
+  return $item;
+}
+
+function items(initialList) {
+  const $items = $(".items");
+  initialList.forEach((initials) => {
+    const $item = item(initials);
+    append($items, $item);
+  });
+}
+
+const initialList = maxInitialNumber(nameInitals(names), 3);
+items(initialList);
