@@ -1,5 +1,17 @@
 body {
   background-color: #242424;
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  align-items: center;
+  color: #f1f1f1;
+}
+
+h1 {
+  text-align: center;
+  font-size: 45px;
+  text-align: center;
+  text-decoration: underline;
 }
 
 .items {
@@ -8,17 +20,17 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  max-width: 800px;
 }
 
 .item {
-  width: 180px;
-  height: 180px;
+  width: 140px;
+  height: 140px;
   padding: 20px;
-  min-width: 180px;
+  min-width: 140px;
   border-radius: 50%;
   background: #000;
-  color: #fff;
-  font-size: 80px;
+  font-size: 60px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -28,4 +40,8 @@ body {
 
 .item span {
   text-transform: uppercase;
+}
+
+.names span {
+  text-decoration: underline;
 }

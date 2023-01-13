@@ -30,6 +30,8 @@ function maxInitialNumber(initials, n) {
   return initials.map((inital) => inital.slice(0, n));
 }
 
+$(".names pre").innerHTML = JSON.stringify(names);
+
 function item(initials) {
   const $item = createNode("div");
   $item.classList.add("item");
