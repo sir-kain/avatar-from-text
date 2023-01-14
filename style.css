@@ -45,3 +45,6 @@ h1 {
 .names span {
   text-decoration: underline;
 }
+.names pre {
+  white-space: pre-wrap;
+}
